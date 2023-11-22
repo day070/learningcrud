@@ -5,6 +5,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM motor");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM motor");
     <title>Astra Honda Dealership</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="atas">
         <img src="gambar/honda.svg" alt="">
@@ -27,19 +29,20 @@ $query = mysqli_query($koneksi, "SELECT * FROM motor");
     <h1>Motor Honda</h1>
     <div class="konten">
         <?php
-        while ($data = mysqli_fetch_array($query)){
+        while ($data = mysqli_fetch_array($query)) {
             echo "<div class='card'>";
-            echo "<img src='gambar/".$data['GAMBAR']."'>";
+            echo "<img src='gambar/" . $data['GAMBAR'] . "'>";
             echo "<div class='text'>";
-            echo "<h3>".$data['NAMA']."</h3>";
+            echo "<h3>" . $data['NAMA'] . "</h3>";
             echo "<small>Harga</small>";
-            echo "<h3>".$data['HARGA']."</h3>";
+            echo "<h3>" . $data['HARGA'] . "</h3>";
             echo "<a href='delete.php?ID=$data[ID]'>Hapus |</a>";
-            echo "<a href='edit.php'> Edit</a>";
+            echo "<a href='edit.php?ID=$data[ID]'> Edit</a>";
             echo "</div>";
             echo "</div>";
         }
         ?>
     </div>
 </body>
+
 </html>
