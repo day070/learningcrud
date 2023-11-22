@@ -1,11 +1,13 @@
-<?php 
+<?php
 
-    include_once("koneksi.php");
+include_once("koneksi.php");
 
-    $nama = $_GET['NAMA'];
+$id = $_GET['ID'];
 
-    $result = mysqli_query($koneksi, "DELETE FROM motor WHERE NAMA=$nama");
+$result = mysqli_query($koneksi, "DELETE FROM motor WHERE id=$id");
+if ($result) {
 
     header("Location:index.php");
+}
 
 ?>
